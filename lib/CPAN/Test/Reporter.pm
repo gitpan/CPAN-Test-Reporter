@@ -15,7 +15,7 @@ use Carp;
 use CPAN;
 
 use vars '$VERSION';
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 =pod
 
@@ -38,9 +38,15 @@ CPAN::Test::Reporter - Report test results of a package retrieved from CPAN
 CPAN::Test::Reporter uniformly posts package test results in support of the
 cpan-testers project.  See B<http://testers.cpan.org/>
 for details.
+
+NOTE TO TESTERS: this module will currently send its output email to
+cpan-workers@perl.org, which might not be what you want.  You can set
+$CPAN::Test::Reporters::CPAN_TESTERS to another email address if you
+prefer.
+
 =cut
 
-my $CPAN_TESTERS = 'skud@infotrope.net';
+my $CPAN_TESTERS = 'cpan-workers@perl.org';
 use vars '%Config';
 
 =head2 new()
